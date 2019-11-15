@@ -4,6 +4,7 @@ import edu.wpi.first.hal.FRCNetComm
 import edu.wpi.first.hal.HAL
 import edu.wpi.first.hal.sim.DriverStationSim
 import edu.wpi.first.wpilibj.TimedRobot
+import edu.wpi.first.wpilibj2.command.CommandScheduler
 
 /**
  * Main robot class.
@@ -16,10 +17,12 @@ class Robot : TimedRobot() {
 
         // initialize RobotContainer and by extension subsystems
         RobotContainer
+
+        println("Hello, world!")
     }
 
     override fun robotPeriodic() {
-        
+        CommandScheduler.getInstance().run()
     }
 
     override fun disabledInit() {
